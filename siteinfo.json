@@ -1,113 +1,109 @@
 [
-
-			{
-				name: 'dyreitou感想',
-				memo: ['sleipnirではurlencodeだめ','/%e7%ac%ac[0-9]+%e8%a9%b1'],
-				data: {
-					url: '^https?://dyreitou.com/.*[0-9]',
-					nextLink: '//a[@class="prev page-numbers"]',
-					pageElement: '//div[@class="comment-section"]',
-					insertBefore: '//div[@class="comment-section"]/div[@class="st-pagelink"]',
-				}
-			},
-			{
-				name:'narou mobile 本文',
-				data:{
-					pageElement: 'id("novel_contents")',
-					nextLink: '(//a[@class="novelview_pager-next"])[last()]',
-					insertBefore:'(//div[@class="novel_bn" or @class="novel_bn footer"])[last()]/following::div',
-					url: '^https?://ncode\.syosetu\.com/[0-9a-z]{7}/[0-9]{1,4}/$',
-				},
-			},
-			{
-				name:'narou mobile 感想回ごと',
-				data:{
-					pageElement: 'id("novel_contents")|id("contents_main")',
-					nextLink: '//a[contains(text(), "Next") and contains(text(), ">>")][1]',
-					url: '^https?://novelcom\.syosetu\.com/impression/list/ncode/[0-9]{4,8}/no/[0-9]{1,4}/$',
-					insertBefore:'(//div[@class="page_bar"])[last()]/following::div',
-					exampleurl: "https://novelcom.syosetu.com/impression/list/ncode/755380/no/139/"
-				},
-			},
-			{
-				name:'narou mobile 感想全体',
-				data:{
-					pageElement: 'id("novel_contents")|id("contents_main")',
-					nextLink: '//a[contains(text(), "Next") and contains(text(), ">>")][1]',
-					url: '^https?://novelcom\.syosetu\.com/impression/list/ncode/[0-9]{4,8}/$',
-					exampleurl: "https://novelcom.syosetu.com/impression/list/ncode/755380/no/139/"
-				},
-			},
-			{
-				name:'narou お気に入りリスト',
-				data:{
-					pageElement: 'id("contents")/form',
-					nextLink: '//a[contains(text(), "Next") and contains(text(), ">>")][1]',
-					url: '^https?://syosetu.com/favnovelmain/list/',
-					exampleurl: 'https://syosetu.com/favnovelmain/list/'
-				},
-			},
-			{
-				name:'narou 各話リスト',
-				data:{
-					pageElement: '//div[@id = "novel_color"]',
-					nextLink: '//div[@class = "novelview_pager-next"]',
-					url: '^https?://ncode.syosetu.com/[0-9a-z]{7,}/',
-					exampleurl: 'https://ncode.syosetu.com/n3930eh/'
-				},
-			},
-			{
-				name:'newpuru.doorblog.jp/',
-				data:{
-					pageElement: '//div[@class = "content"]',
-					nextLink: '(//li[@class = "pager-next box-border"])/a',
-					url: '^http://newpuru.doorblog.jp/',
-					insertBefore:'',
-				},
-			},
-			{
-				name:'kanasoku.s130',
-				data:{
-					pageElement: '//div[@id = "content"]',
-					nextLink: '//a[@class = "square_btn"]',
-					url: '^http://kanasoku.s130.coreserver.jp/',
-				},
-			},
-			{
-				name:'toua sokuhou',
-				memo:'javascriptでページを組み直している。このためcss適応ができない',
-				data:{
-					pageElement: '//div[@class = "ui-content" or @id="main"]',
-					nextLink: '//a[@class = "next ui-btn ui-btn-up-a"]',
-					insertBefore:'(//ul[@class="ui-listview"])[last()]/following::*',
-					url: '^http://news.antenam.biz/',
-				},
-			},
-			{
-				name:'2channneler',
-				memo:'最初のdodumentにはcontentなし',
-				data:{
-					pageElement: '//div[@class = "ui-content"]',
-					nextLink: '(//a[@class="ui-btn"])',
-					url: '^https://2channeler.com/sp/',
-				},
-			},
-
-			
-			
-			{
-				resource_url: "http://wedata.net/items/85199",
-				name: "ｋ本的に無料ソフト・フリーソフト　各ソフトウェア紹介ページ",
-				memo: ["css selectorとxpathは別物です",
-						'//a[@class="novelview_pager-next"][position()=2]連続したaではないのでだめ',
-						'//\*[last()]/self::a[@class="novelview_pager-next"]だめ',
-						'(//a[@class="novelview_pager-next"])[last()];OK'],
-				data: {
-				url: "^https?://(?:www\\.)?gigafree\\.net/.+",
-				pageElement: "id(\"main\")//div[contains(concat(\" \", normalize-space(@class), \" \"), \" detail \")]",
-				exampleUrl: "https://www.gigafree.net/media/music/aimp.html",
-				insertBefore: "id(\"main\")//div[contains(concat(\" \", normalize-space(@class), \" \"), \" article_bottom \")]",
-				nextLink: "id(\"main\")//div[contains(concat(\" \", normalize-space(@class), \" \"), \" pagination \")]/a[contains(text(), \"次のページへ進む\")]"
-				},
-},
-			]
+	{
+		name: 'dyreitou感想',
+		memo: ['sleipnirではurlencodeだめ','/%e7%ac%ac[0-9]+%e8%a9%b1'],
+		data: {
+			url: '^https?://dyreitou.com/.*[0-9]',
+			nextLink: '//a[@class="prev page-numbers"]',
+			pageElement: '//div[@class="comment-section"]',
+			insertBefore: '//div[@class="comment-section"]/div[@class="st-pagelink"]',
+		}
+	},
+	{
+		name:'narou mobile 本文',
+		data:{
+			pageElement: 'id("novel_contents")',
+			nextLink: '(//a[@class="novelview_pager-next"])[last()]',
+			insertBefore:'(//div[@class="novel_bn" or @class="novel_bn footer"])[last()]/following::div',
+			url: '^https?://ncode\.syosetu\.com/[0-9a-z]{7}/[0-9]{1,4}/$',
+		},
+	},
+	{
+		name:'narou mobile 感想回ごと',
+		data:{
+			pageElement: 'id("novel_contents")|id("contents_main")',
+			nextLink: '//a[contains(text(), "Next") and contains(text(), ">>")][1]',
+			url: '^https?://novelcom\.syosetu\.com/impression/list/ncode/[0-9]{4,8}/no/[0-9]{1,4}/$',
+			insertBefore:'(//div[@class="page_bar"])[last()]/following::div',
+			exampleurl: "https://novelcom.syosetu.com/impression/list/ncode/755380/no/139/"
+		},
+	},
+	{
+		name:'narou mobile 感想全体',
+		data:{
+			pageElement: 'id("novel_contents")|id("contents_main")',
+			nextLink: '//a[contains(text(), "Next") and contains(text(), ">>")][1]',
+			url: '^https?://novelcom\.syosetu\.com/impression/list/ncode/[0-9]{4,8}/$',
+			exampleurl: "https://novelcom.syosetu.com/impression/list/ncode/755380/no/139/"
+		},
+	},
+	{
+		name:'narou お気に入りリスト',
+		data:{
+			pageElement: 'id("contents")/form',
+			nextLink: '//a[contains(text(), "Next") and contains(text(), ">>")][1]',
+			url: '^https?://syosetu.com/favnovelmain/list/',
+			exampleurl: 'https://syosetu.com/favnovelmain/list/'
+		},
+	},
+	{
+		name:'narou 各話リスト',
+		data:{
+			pageElement: '//div[@id = "novel_color"]',
+			nextLink: '//div[@class = "novelview_pager-next"]',
+			url: '^https?://ncode.syosetu.com/[0-9a-z]{7,}/',
+			exampleurl: 'https://ncode.syosetu.com/n3930eh/'
+		},
+	},
+	{
+		name:'newpuru.doorblog.jp/',
+		data:{
+			pageElement: '//div[@class = "content"]',
+			nextLink: '(//li[@class = "pager-next box-border"])/a',
+			url: '^http://newpuru.doorblog.jp/',
+			insertBefore:'',
+		},
+	},
+	{
+		name:'kanasoku.s130',
+		data:{
+			pageElement: '//div[@id = "content"]',
+			nextLink: '//a[@class = "square_btn"]',
+			url: '^http://kanasoku.s130.coreserver.jp/',
+		},
+	},
+	{
+		name:'toua sokuhou',
+		memo:'javascriptでページを組み直している。このためcss適応ができない',
+		data:{
+			pageElement: '//div[@class = "ui-content" or @id="main"]',
+			nextLink: '//a[@class = "next ui-btn ui-btn-up-a"]',
+			insertBefore:'(//ul[@class="ui-listview"])[last()]/following::*',
+			url: '^http://news.antenam.biz/',
+		},
+	},
+	{
+		name:'2channneler',
+		memo:'最初のdodumentにはcontentなし',
+		data:{
+			pageElement: '//div[@class = "ui-content"]',
+			nextLink: '(//a[@class="ui-btn"])',
+			url: '^https://2channeler.com/sp/',
+		},
+	},
+	{
+		resource_url: "http://wedata.net/items/85199",
+		name: "ｋ本的に無料ソフト・フリーソフト　各ソフトウェア紹介ページ",
+		memo: ["css selectorとxpathは別物です",
+			'//a[@class="novelview_pager-next"][position()=2]連続したaではないのでだめ',
+			'//\*[last()]/self::a[@class="novelview_pager-next"]だめ',
+			'(//a[@class="novelview_pager-next"])[last()];OK'],
+		data: {
+		url: "^https?://(?:www\\.)?gigafree\\.net/.+",
+		pageElement: "id(\"main\")//div[contains(concat(\" \", normalize-space(@class), \" \"), \" detail \")]",
+		exampleUrl: "https://www.gigafree.net/media/music/aimp.html",
+		insertBefore: "id(\"main\")//div[contains(concat(\" \", normalize-space(@class), \" \"), \" article_bottom \")]",
+		nextLink: "id(\"main\")//div[contains(concat(\" \", normalize-space(@class), \" \"), \" pagination \")]/a[contains(text(), \"次のページへ進む\")]"
+		},
+	},
+]
