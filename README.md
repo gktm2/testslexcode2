@@ -1,2 +1,2 @@
-# testslexcode2
+# SimpleAutoPager for SleipnirMobile
 Simple Autopager for Sleipnir
