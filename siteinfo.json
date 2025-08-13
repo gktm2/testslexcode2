@@ -5,8 +5,8 @@
 		data: {
 			url: '^https://search.rakuten.co.jp/search/mall/.*',
 			nextLink: '//*[@id="root"]/div[2]/div[2]/div[4]/div/div/div/a',
-			pageElement: '//*[@id="root"]/div[2]/div[2]/div[3]/div/div/div',
-			insertBefore: '//*[@id="root"]/div[2]/div[2]/div[4]',
+			pageElement: '//DIV[contains(@class, 'search-results--')]',
+			insertBefore: '//DIV[class="searchPagination"]',
 		}
 	}
 ]
