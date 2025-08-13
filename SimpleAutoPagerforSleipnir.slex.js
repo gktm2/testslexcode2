@@ -4,13 +4,12 @@
 // @description autopager for sleipnir
 // @include http://*
 // @include https://*
-// @require jquery
 // @require api-notification
 // @require api
 // @grant GM_xmlhttpRequest
 // @grant GM_getValue
 // @grant GM_setValue
-// @version 2.02
+// @version 3.00
 // @history:ja      1.0.1 siteinfo_url GM_XMLhttprequestが非同期動作。callbackの関係でforeach使用できず。削除。
 // @history:ja      1.0.2 id指定の場合も正常位置に挿入できるようになった。appendPointのままにしただけ
 // @history:ja      1.0.3 最後のページが読み込まれていなかったのを修正。
@@ -21,7 +20,7 @@
 // @history:ja      2.00 名称変更。sconsole.log追加。最初の1回しか読み込まないように変更（localStorage使用）
 // @history:ja      2.01 1回のみ実行のlocalStorage削除。url一致での排除へ。
 // @history:ja      2.02 sconsole改良、getnextpage多重回避
-
+// @history:ja      3.00 github参照に変更
 // ==/UserScript==
 
 (async function() {
@@ -31,7 +30,7 @@
 
 	AutomateMobilePage.prototype = {
 		Settings: {
-			siteinfo_urls: ['http://wedata.net/databases/AutoPagerize/items_all.json'],
+			siteinfo_urls: ['https://raw.githubusercontent.com/gktm2/testslexcode2/refs/heads/main/siteinfo.json'],
 			AUTO_START: true,
 			REMAIN_HEIGHT: 100,
 			Checkdata: true,
@@ -160,7 +159,7 @@
 				error: '#cc0000'
 			}
 		},
-		useWedata: false,
+		useWedata: true,
 		pageCount:1,
 		accessCount: 0,
 		isSleipnir: false,
