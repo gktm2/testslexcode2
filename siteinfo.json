@@ -1,7 +1,6 @@
 [
 	{
 		name: 'rakuten',
-		memo: ['search view'],
 		data: {
 			url: '^https://search.rakuten.co.jp/search/mall/.*',
 			nextLink: '//*[@id="root"]/div[2]/div[2]/div[4]/div/div/div/a',
